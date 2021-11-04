@@ -35,6 +35,7 @@
  
    //   render(list, results);
    // });
+
  
    input.addEventListener('keyup', (event) => {
      const value = input.value.toLowerCase();
@@ -47,3 +48,73 @@
      render(list, results);
    });
  });
+ 
+
+
+ /* 
+
+ PROVA FALLITA
+ 
+ //SELEZIONO GLI ELEMENTI CHE MI INTERESSANO
+ const contactForm = q('.contantForm');
+ const nameInput = q('.nameInput');
+ const telInput =q('.telInput');
+ const emailInput = q('.emailInput');
+ const list = q('ul');
+ 
+
+ //ESTRAGGO I VALORI DEGLI INPUT
+ 
+ const valueNameInput = nameInput.value;
+ const valueTelInput = telInput.value;
+ const valueEmailInut = emailInput.value;
+
+
+
+ 
+
+//CREO UN NUOVO OGGETTO
+
+ const newContact = {
+      name: "valueNameInput",
+      phone: "valueTelInput",
+      email: "valueEmailInput"
+    }
+
+
+//METODO PER PUSHARE L'OGGETTO NELL'ARRAY
+
+list.push(newContact);
+
+
+//EVENTO CHE AL CLICK DEL BOTTONE INSERISCE NELL'ARRAY ESISTENTE (DATA?) L'OGGETTO NEW CONTACT
+
+const contactForm = q('.contactForm')
+const nameInput = q('.nameInput');
+const telInput =q('.telInput');
+const emailInput = q('.emailInput');
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const contactForm = q('.contactForm')
+    const nameInput = q('.nameInput');
+    const telInput =q('.telInput');
+    const emailInput = q('.emailInput');
+    
+
+    console.log(nameInput);
+    console.log(telInput);
+    
+    
+    const newContact = {
+      name: "nameInput.value",
+      phone: "telInput.value",
+      email: "emailInput.value"
+    }
+    
+  
+list.push(newContact);      
+    
+});
+
+*/

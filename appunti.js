@@ -101,3 +101,4 @@ input.addEventListener('keyup', (event) => {
 });
 */
 
+//PROVA Porre i valori di input ugulali a element.phone element.email ecc e poi invocare la funzione render?
