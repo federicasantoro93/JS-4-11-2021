@@ -5,14 +5,16 @@
 
 
  const render = (container, items) => {
-   const elements = items.map((element) => 
+
+      const elements = items.map((element) => 
      `<li>
        <h3>${element.name}</h3>
        <p><strong>Phone:</strong> <a href="tel:${element.phone}">${element.phone}</a></p>
        <p><strong>Email:</strong> <a href="mailto:${element.email}">${element.email}</a></p>
      </li>`
    );
-   
+
+     
    const content = elements.join('');
  
    container.innerHTML = content;
@@ -22,7 +24,8 @@
    const form = q('form');
    const input = q('form input');
    const list = q('ul');
-   
+   const add = q('#add'); //Seleziono la seconda form
+
    render(list, data);
  
    // VERSIONE ORIGINALE CON IL SUBMIT
@@ -47,6 +50,25 @@
  
      render(list, results);
    });
+
+   add.addEventListener('submit', (event) => {
+     event.preventDefault();
+     //console.log(event.target.phone.value); 
+
+     const newContact ={
+       name: event.target.name.value, 
+       phone: event.target.phone.value, //l'elemento viene preso dal name="phone"
+       email: event.target.email.value
+     };
+     data.push(newContact); 
+
+     render(list, data);
+
+     add.reset();  //metodo solo dei form
+      //event.target.reset()
+
+     console.log(newContact);
+   });
  });
  
 
@@ -60,7 +82,7 @@
  const nameInput = q('.nameInput');
  const telInput =q('.telInput');
  const emailInput = q('.emailInput');
- const list = q('ul');
+
  
 
  //ESTRAGGO I VALORI DEGLI INPUT
@@ -113,7 +135,7 @@ contactForm.addEventListener('submit', (event) => {
     }
     
   
-list.push(newContact);      
+list.push(newContact);      //data!!!
     
 });
 
